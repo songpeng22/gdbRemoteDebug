@@ -1,0 +1,17 @@
+# on host
+arm-linux-gnueabihf-gcc -g -o main main.c
+scp main use@ip:/home/user
+# on remote(arm)
+# 172.25.115.195 is arm ip address
+# 13000 is port to debug, can be any
+cd /home/user
+gdbserver 172.25.115.195:13000 main
+# on host
+arm-linux-gnueabihf-gdb main
+target remote 172.25.115.195:13000
+# set break point
+gdb:b main
+# continue to run
+gdb:c
+# read variable i
+gdb:p i
