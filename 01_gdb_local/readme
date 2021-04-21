@@ -1,0 +1,12 @@
+# build with debug info
+gcc -g -o main main.cpp
+# enter gdb mode
+gdb main
+# set break point
+b main
+# run program
+r
+# read variable i
+p i
+# quit
+q
